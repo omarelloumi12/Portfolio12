@@ -1,0 +1,222 @@
+/* Variables de couleurs */
+:root {
+    --primary-color: #457b9d; /* Bleu principal */
+    --secondary-color: #a8dadc; /* Cyan */
+    --background-color: #f0f4f8; /* Fond clair */
+    --text-color: #333; /* Texte foncé pour le contraste */
+    --hover-effect: rgba(69, 123, 157, 0.2); /* Effet de survol doux */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Ombres */
+    --hover-shadow: rgba(0, 0, 0, 0.3); /* Ombres lors du survol */
+}
+
+/* Styles généraux */
+* {
+    box-sizing: border-box; /* Assure que le padding et la bordure sont inclus dans la largeur et la hauteur des éléments */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+/* Conteneur principal */
+.contact-container {
+    padding: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px var(--shadow-color);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease-in-out; /* Ajout de transition sur le fond */
+}
+
+.contact-container:hover {
+    background-color: rgba(69, 123, 157, 0.1); /* Fond plus clair au survol */
+}
+
+/* Titre de la section */
+.contact-container h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Texte d'introduction */
+.intro-text {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+}
+.intro-text1 {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Conteneur des détails de contact */
+.contact-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contact-item {
+    flex: 1 1 30%;
+    padding: 20px;
+    background: var(--background-color);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    margin: 5px;
+    text-align: left;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.contact-item:hover {
+    transform: translateY(-10px) scale(1.05); /* Effet de flottement et d'agrandissement au survol */
+    box-shadow: 0 12px 30px var(--hover-shadow);
+    background-color: white;
+}
+
+.contact-item h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+/* Ajout d'une animation subtile sur le texte */
+.contact-item p,
+.contact-item a {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.contact-item a {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--secondary-color);
+    transform: translateX(5px); /* Déplacement léger au survol */
+}
+
+/* Réseaux sociaux */
+.socials-container {
+    margin-top: 30px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    animation: bounce 2s infinite; /* Animation de pulsation subtile */
+}
+
+.social-icons a:hover {
+    background: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--hover-shadow);
+}
+
+/* Pulsation douce */
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Bouton Télécharger le CV */
+.cv-container {
+    margin-top: 30px;
+}
+
+.download-cv-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.download-cv-btn i {
+    margin-right: 8px;
+}
+
+.download-cv-btn:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.download-cv-btn:active {
+    transform: scale(0.98);
+}
+
+/* Animation fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .contact-details {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .contact-item {
+        width: 90%;
+        text-align: center;
+    }
+
+    .social-icons a {
+        font-size: 1.8rem;
+        width: 45px;
+        height: 45px;
+    }
+}
