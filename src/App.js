@@ -2,14 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { FaProjectDiagram, FaCertificate, FaEnvelope, FaHome, FaCog, FaPen } from 'react-icons/fa';  // Importation de FaPen pour le blog
 import './App.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 
 // Importer les pages
-import Home from './pages/Home';
-import Contact from './pages/Contact';
-import Certifications from './pages/Certifications';
-import Competances from './pages/Competances';
-import Projects from './pages/Projects';
-import Blog from './pages/Blog';  // Assurez-vous d'avoir cette page
+import Home from './components/Home';
+import Contact from './components/Contact';
+import Certifications from './components/Certifications';
+import Competances from './components/Competances';
+import Projects from './components/Projects';
+import Blog from './components/Blog';  // Assurez-vous d'avoir cette page
 
 function App() {
   return (

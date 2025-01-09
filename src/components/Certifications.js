@@ -8,7 +8,11 @@ function Certifications() {
         MES <span className="highlight">CERTIFICATIONS</span>
       </h1>
      <div className="certification-card">
+
 <img src={`${process.env.PUBLIC_URL}/images/certifbigdata.png`} alt="Certification" className="certification-image" />
+
+   
+
 
   <div className="certification-details">
     <h2>Big Data Engineer Certificate</h2>
@@ -34,13 +38,9 @@ function Certifications() {
     </p>
   </div>
 </div>
-
       <div className="certification-card">
-        <img
-          src="/images/certif logo.png" // Remplacez par le chemin réel de l'image
-          alt="Certification"
-          className="certification-image"
-        />
+<img src={`${process.env.PUBLIC_URL}/images/certif logo.png`} alt="Certification" className="certification-image" />
+        
         <div className="certification-details">
           <h2>Professional Logo Production with IA</h2>
           <p>

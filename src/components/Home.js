@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from '../logo.jpg'; // Assurez-vous que le chemin de l'image est correct
 import './Home.css';
-
+ 
 function Home() {
   const [showMore, setShowMore] = useState(false);
 

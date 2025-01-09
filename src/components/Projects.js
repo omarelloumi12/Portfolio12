@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import "./Projects.css";
 
 function Projects() {
@@ -26,7 +29,7 @@ function Projects() {
         description: "Conception et réalisation d'un site web e-commerce de matériel informatique en utilisant PHP et MySQL pour la gestion des produits et des commandes",
         keywords: "Laravel -PHP - MySQL- HTML - XAMPP - VScode",
         images: ["images/project5.png","images/project51.png","images/project52.png","images/project53.png","images/project54.png"],
-	companyLogo: "images/logoiit.png", 
+        companyLogo: "images/logoiit.png", 
       },
       {
       id: 3,
@@ -42,18 +45,16 @@ function Projects() {
         description: "Réalisation d’une application desktop pour gérer les livres, les utilisateurs et les emprunts d'une bibliothèque",
         keywords: ".NET - SQL Server - Microsoft Visual Studio",
         images: ["images/project6.png","images/project61.png","images/project62.png"],
-	companyLogo: "images/logoiit.png", 
+        companyLogo: "images/logoiit.png", 
       },
     {
       id: 4,
       title: "Smart Home",
-      description: "Conception et réalisation d'une maison intelligente connecté via une application mobile pour automatiser les tâches et améliorer le confort des utilisateurs",
+      description: "Conception et réalisation d'une maison intelligente connectée via une application mobile pour automatiser les tâches et améliorer le confort des utilisateurs",
       keywords: "Uno - Mega - LDR - LCD - clavier - Capteur d'Humidité - Buzzer - App Inventor - SketchUp",
       images: ["images/project4.jpg","images/project41.jpg","images/project42.jpg"],
       companyLogo: "images/logoisgis.png", 
     },
-    
-     
   ];
 
   const [selectedProject, setSelectedProject] = useState(null);
@@ -66,20 +67,25 @@ function Projects() {
     setSelectedProject(null);
   };
 
+  const settings = {
+    dots: true, // Afficher des points de navigation
+    infinite: true, // Boucle infinie
+    speed: 500, // Vitesse de transition
+    slidesToShow: 1, // Afficher 1 image à la fois
+    slidesToScroll: 1, // Scroll d'une image à la fois
+    fade: true, // Transition de fondu
+  };
+
   return (
     <div className="projects-container">
       <h1 className="projects-title">
         MON <span className="highlight">PORTFOLIO</span>
       </h1>
-      {/* <p className="portfolio-intro">
-        "Chaque projet que je réalise reflète ma passion pour l'innovation et mon engagement à résoudre des défis
-        complexes."
-      </p> */}
       <div className="projects-grid">
         {projects.map((project) => (
           <div key={project.id} className="project-card">
             <img
-              src={project.images[0]}
+              src={`${process.env.PUBLIC_URL}/${project.images[0]}`}
               alt={project.title}
               className="project-image"
             />
@@ -93,7 +99,7 @@ function Projects() {
                 Voir les détails
               </button>
               <img
-                src={project.companyLogo}
+                src={`${process.env.PUBLIC_URL}/${project.companyLogo}`}
                 alt={`${project.title} logo`}
                 className="company-logo"
               />
@@ -117,16 +123,17 @@ function Projects() {
               <i className="fas fa-tags"></i>
               <strong>Mots-clés :</strong> {selectedProject.keywords}
             </p>
-            <div className="carousel">
+            <Slider {...settings}>
               {selectedProject.images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`${selectedProject.title} - ${index + 1}`}
-                  className="carousel-image"
-                />
+                <div key={index}>
+                  <img
+                    src={`${process.env.PUBLIC_URL}/${image}`}
+                    alt={`${selectedProject.title} - ${index + 1}`}
+                    className="carousel-image"
+                  />
+                </div>
               ))}
-            </div>
+            </Slider>
           </div>
         </div>
       )}
