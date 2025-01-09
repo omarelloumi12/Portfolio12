@@ -1,9 +1,9 @@
 {
   "name": "mon-portfolio",
   "version": "0.1.0",
+  "homepage": "https://omarelloumi12.github.io/Portfolio12",
   "private": true,
   "dependencies": {
-    "homepage": "https://omarelloumi12.github.io/portfolio12",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
@@ -49,6 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
-  
 }
